@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="include\common">
+      <UniqueIdentifier>{53567e05-fef9-4b57-926a-caafc8768cc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="src\object">
+      <UniqueIdentifier>{45594e84-d324-4d46-adb3-482c66fbb79b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\object">
+      <UniqueIdentifier>{37b64dee-4dba-4877-9cdf-84d9d68a90d4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\lf_list.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lf_m2engine.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lf_magic_ac_list.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lf_map_envir.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lf_mem_stream.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lf_menu.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lf_norm_npc.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lf_play_object.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lf_smart_object.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lf_stringlist.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lf_user_engine.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lf_base_object.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lf_dummy_object.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lf_guild.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lf_hero_object.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lf_inifile.cc">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lf_hook.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\lf_hook.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_arch.h">
+      <Filter>include\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_crc32.h">
+      <Filter>include\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_stdint.h">
+      <Filter>include\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_struct.h">
+      <Filter>include\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_typedef.h">
+      <Filter>include\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_utils.h">
+      <Filter>include\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_base_object.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_dummy_object.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_guild.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_hero_object.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_inifile.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_list.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_m2engine.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_magic_ac_list.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_map_envir.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_mem_stream.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_menu.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_norm_npc.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_platform.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_play_object.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_smart_object.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_stringlist.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lf_user_engine.h">
+      <Filter>include\object</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

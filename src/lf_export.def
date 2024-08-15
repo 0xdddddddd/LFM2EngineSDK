@@ -1,0 +1,6 @@
+;https://learn.microsoft.com/zh-cn/cpp/build/exporting-from-a-dll-using-def-files?view=msvc-170
+;只能使用模块定义文件导出，否则会有修饰符。
+LIBRARY
+EXPORTS
+Init
+UnInit
