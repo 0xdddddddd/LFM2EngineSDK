@@ -19,10 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\lf_interface.cc" />
-    <ClCompile Include="..\..\src\lf_main.cc" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\lf_library\vsprojects\lf_library.vcxproj">
       <Project>{c9df835b-5ea7-4d84-baa1-0b86eaef00dc}</Project>
     </ProjectReference>
@@ -31,7 +27,11 @@
     <None Include="..\..\src\lf_export.def" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\lf_interface.h" />
+    <ClInclude Include="..\lf_interface.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\lf_interface.cc" />
+    <ClCompile Include="..\lf_main.cc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

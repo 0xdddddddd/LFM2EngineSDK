@@ -27,7 +27,7 @@ namespace LF
 		void SaveToFile(const char* fileName);
 	private:
 		struct TMemoryStreamFunc* self;
-		struct TMemoryStream*	  object;
+		struct TMemoryStream* stream;
 	};
 }
 

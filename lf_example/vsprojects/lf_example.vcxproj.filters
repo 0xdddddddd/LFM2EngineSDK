@@ -15,21 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\lf_main.cc">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\lf_interface.cc">
-      <Filter>src</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\..\src\lf_export.def">
       <Filter>resources</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\lf_interface.h">
+    <ClInclude Include="..\lf_interface.h">
       <Filter>include</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\lf_interface.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lf_main.cc">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

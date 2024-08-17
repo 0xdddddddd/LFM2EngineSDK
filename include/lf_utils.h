@@ -6,7 +6,17 @@
 #include <utility>
 #include <tchar.h>
 
-#define DebugMsg(...) do { char debugMsg[MAX_PATH]; _snprintf_s(debugMsg, sizeof(debugMsg), _TRUNCATE, __VA_ARGS__); OutputDebugStringA(debugMsg); } while(0)
+#define DebugMsg(...) do { char debugMsg[MAX_PATH]; snprintf(debugMsg, sizeof(debugMsg), __VA_ARGS__); OutputDebugStringA(debugMsg); } while(0)
+
+#define DebugScriptMsg(ScriptParam, n) do { \
+    char debugMsg[MAX_PATH]; \
+    _snprintf_s(debugMsg, sizeof(debugMsg), _TRUNCATE, \
+        "sRawParam%02d: %s\nsParam%02d: %s\nnParam%02d: %d\n", \
+        n, ScriptParam->sRawParam##n, \
+        n, ScriptParam->sParam##n, \
+        n, ScriptParam->nParam##n); \
+    OutputDebugStringA(debugMsg); \
+} while(0)
 
 namespace LF
 {

@@ -20,27 +20,26 @@ namespace LF
 		struct TMenuItem* GetToolsMenu();
 		struct TMenuItem* GetHelpMenu();
 		struct TMenuItem* GetPluginMenu();
-		i32 Count();
-		struct TMenuItem* GetItems(i32 index);
-		struct TMenuItem* Add(i32 plugID, struct TMenuItem* menuItem, const char* caption, i32 tag, void* onClick);
-		struct TMenuItem* Insert(i32 plugID, struct TMenuItem* menuItem, i32 index, const char* caption, i32 tag, void* onClick);
-		bool GetCaption(char* dest, u32* destLen);
-		void SetCaption(const char* caption);
-		bool GetEnabled();
-		void SetEnabled(bool enabled);
-		bool GetVisable();
-		void SetVisable(bool visible);
-		bool GetChecked();
-		void SetChecked(bool checked);
-		bool GetRadioItem();
-		void SetRadioItem(bool isRadioItem);
-		i32 GetGroupIndex();
-		void SetGroupIndex(i32 value);
-		i32 GetTag();
-		void SetTag(i32 value);
+		i32 Count(struct TMenuItem* menuItem);
+		struct TMenuItem* GetItems(struct TMenuItem* menuItem, i32 index);
+		struct TMenuItem* Add(intptr_t plugID, struct TMenuItem* menuItem, const char* caption, i32 tag, void* onClick);
+		struct TMenuItem* Insert(intptr_t plugID, struct TMenuItem* menuItem, i32 index, const char* caption, i32 tag, void* onClick);
+		bool GetCaption(struct TMenuItem* menuItem, char* dest, u32* destLen);
+		void SetCaption(struct TMenuItem* menuItem, const char* caption);
+		bool GetEnabled(struct TMenuItem* menuItem);
+		void SetEnabled(struct TMenuItem* menuItem, bool enabled);
+		bool GetVisable(struct TMenuItem* menuItem);
+		void SetVisable(struct TMenuItem* menuItem, bool visible);
+		bool GetChecked(struct TMenuItem* menuItem);
+		void SetChecked(struct TMenuItem* menuItem, bool checked);
+		bool GetRadioItem(struct TMenuItem* menuItem);
+		void SetRadioItem(struct TMenuItem* menuItem, bool isRadioItem);
+		i32 GetGroupIndex(struct TMenuItem* menuItem);
+		void SetGroupIndex(struct TMenuItem* menuItem, i32 value);
+		i32 GetTag(struct TMenuItem* menuItem);
+		void SetTag(struct TMenuItem* menuItem, i32 value);
 	private:
 		struct TMemuFunc* self;
-		struct TMenuItem* object;
 	};
 }
 

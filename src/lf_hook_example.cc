@@ -1,4 +1,4 @@
-#include "lf_hook.h"
+#include "lf_hook_example.h"
 
 namespace
 {
@@ -11,7 +11,7 @@ namespace
 	{
 
 	}
-
+	
 	bool HookGetIPLocal(char* sIPaddr, char* Dest, u32& DestLen)
 	{
 		return false;

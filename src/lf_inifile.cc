@@ -4,7 +4,6 @@ namespace LF
 {
 	IniFile::IniFile(struct TIniFileFunc* self)
 		: self(self)
-		, object(nullptr)
 	{
 
 	}
@@ -23,121 +22,120 @@ namespace LF
 		return wrap_call<struct TIniFile*>(self->Create, sFileName);
 	}
 
-	void IniFile::Free()
+	void IniFile::Free(struct TIniFile* iniFile)
 	{
 		if (self == nullptr || self->Free == nullptr) {
 			return;
 		}
 
-		if (object == nullptr) {
+		if (iniFile == nullptr) {
 			return;
 		}
 
-		wrap_call(self->Free, object);
+		wrap_call(self->Free, iniFile);
 	}
 
-	bool IniFile::SectionExists(const char* section)
+	bool IniFile::SectionExists(struct TIniFile* iniFile, const char* section)
 	{
 		if (self == nullptr || self->SectionExists == nullptr || section == nullptr) {
 			return false;
 		}
 
-		if (object == nullptr) {
+		if (iniFile == nullptr) {
 			return false;
 		}
 
-		return wrap_call<bool>(self->SectionExists, object, section);
+		return wrap_call<bool>(self->SectionExists, iniFile, section);
 	}
 
-	bool IniFile::ValueExists(const char* section, const char* ident)
+	bool IniFile::ValueExists(struct TIniFile* iniFile, const char* section, const char* ident)
 	{
 		if (self == nullptr || self->ValueExists == nullptr || section == nullptr || ident == nullptr) {
 			return false;
 		}
 
-		if (object == nullptr) {
+		if (iniFile == nullptr) {
 			return false;
 		}
 
-		return wrap_call<bool>(self->ValueExists, object, section, ident);
+		return wrap_call<bool>(self->ValueExists, iniFile, section, ident);
 	}
 
-	bool IniFile::ReadString(const char* section, const char* ident, const char* default_, char* dest, u32* destLen)
+	bool IniFile::ReadString(struct TIniFile* iniFile, const char* section, const char* ident, const char* _default, char* dest, u32* destLen)
 	{
-		if (self == nullptr || self->ReadString == nullptr || section == nullptr || ident == nullptr ||
-			default_ == nullptr || dest == nullptr || destLen == nullptr) {
+		if (self == nullptr || self->ReadString == nullptr || section == nullptr || ident == nullptr || _default == nullptr || dest == nullptr || destLen == nullptr) {
 			return false;
 		}
 
-		if (object == nullptr) {
+		if (iniFile == nullptr) {
 			return false;
 		}
 
-		return wrap_call<bool>(self->ReadString, object, section, ident, default_, dest, destLen);
+		return wrap_call<bool>(self->ReadString, iniFile, section, ident, _default, dest, destLen);
 	}
 
-	void IniFile::WriteString(const char* section, const char* ident, const char* value)
+	void IniFile::WriteString(struct TIniFile* iniFile, const char* section, const char* ident, const char* value)
 	{
 		if (self == nullptr || self->WriteString == nullptr || section == nullptr || ident == nullptr || value == nullptr) {
 			return;
 		}
 
-		if (object == nullptr) {
+		if (iniFile == nullptr) {
 			return;
 		}
 
-		wrap_call(self->WriteString, object, section, ident, value);
+		wrap_call(self->WriteString, iniFile, section, ident, value);
 	}
 
-	i32 IniFile::ReadInteger(const char* section, const char* ident, i32 default_)
+	i32 IniFile::ReadInteger(struct TIniFile* iniFile, const char* section, const char* ident, i32 _default)
 	{
 		if (self == nullptr || self->ReadInteger == nullptr || section == nullptr || ident == nullptr) {
-			return default_;
+			return 0;
 		}
 
-		if (object == nullptr) {
-			return default_;
+		if (iniFile == nullptr) {
+			return 0;
 		}
 
-		return wrap_call<i32>(self->ReadInteger, object, section, ident, default_);
+		return wrap_call<i32>(self->ReadInteger, iniFile, section, ident, _default);
 	}
 
-	void IniFile::WriteInteger(const char* section, const char* ident, i32 value)
+	void IniFile::WriteInteger(struct TIniFile* iniFile, const char* section, const char* ident, i32 value)
 	{
 		if (self == nullptr || self->WriteInteger == nullptr || section == nullptr || ident == nullptr) {
 			return;
 		}
 
-		if (object == nullptr) {
+		if (iniFile == nullptr) {
 			return;
 		}
 
-		wrap_call(self->WriteInteger, object, section, ident, value);
+		wrap_call(self->WriteInteger, iniFile, section, ident, value);
 	}
 
-	bool IniFile::ReadBool(const char* section, const char* ident, bool default_)
+	bool IniFile::ReadBool(struct TIniFile* iniFile, const char* section, const char* ident, bool _default)
 	{
 		if (self == nullptr || self->ReadBool == nullptr || section == nullptr || ident == nullptr) {
-			return default_;
+			return false;
 		}
 
-		if (object == nullptr) {
-			return default_;
+		if (iniFile == nullptr) {
+			return false;
 		}
 
-		return wrap_call<bool>(self->ReadBool, object, section, ident, default_);
+		return wrap_call<bool>(self->ReadBool, iniFile, section, ident, _default);
 	}
 
-	void IniFile::WriteBool(const char* section, const char* ident, bool value)
+	void IniFile::WriteBool(struct TIniFile* iniFile, const char* section, const char* ident, bool value)
 	{
 		if (self == nullptr || self->WriteBool == nullptr || section == nullptr || ident == nullptr) {
 			return;
 		}
 
-		if (object == nullptr) {
+		if (iniFile == nullptr) {
 			return;
 		}
 
-		wrap_call(self->WriteBool, object, section, ident, value);
+		wrap_call(self->WriteBool, iniFile, section, ident, value);
 	}
 }

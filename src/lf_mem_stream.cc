@@ -4,14 +4,14 @@ namespace LF
 {
 	MemStream::MemStream(struct TMemoryStreamFunc* self)
 		: self(self)
-		, object(nullptr)
+		, stream(Create())
 	{
 
 	}
 
 	MemStream::~MemStream()
 	{
-
+		Free();
 	}
 
 	struct TMemoryStream* MemStream::Create()
@@ -29,24 +29,24 @@ namespace LF
 			return;
 		}
 
-		if (object == nullptr) {
+		if (stream == nullptr) {
 			return;
 		}
 
-		wrap_call(self->Free, object);
+		wrap_call(self->Free, stream);
 	}
-	
+
 	i64 MemStream::GetSize()
 	{
 		if (self == nullptr || self->GetSize == nullptr) {
 			return 0;
 		}
 
-		if (object == nullptr) {
+		if (stream == nullptr) {
 			return 0;
 		}
 
-		return wrap_call<i64>(self->GetSize, object);
+		return wrap_call<i64>(self->GetSize, stream);
 	}
 
 	void MemStream::SetSize(i32 newSize)
@@ -55,11 +55,11 @@ namespace LF
 			return;
 		}
 
-		if (object == nullptr) {
+		if (stream == nullptr) {
 			return;
 		}
 
-		wrap_call(self->SetSize, object, newSize);
+		wrap_call(self->SetSize, stream, newSize);
 	}
 
 	void MemStream::Clear()
@@ -68,11 +68,11 @@ namespace LF
 			return;
 		}
 
-		if (object == nullptr) {
+		if (stream == nullptr) {
 			return;
 		}
 
-		wrap_call(self->Clear, object);
+		wrap_call(self->Clear, stream);
 	}
 
 	i32 MemStream::Read(char* buffer, i32 count)
@@ -81,11 +81,11 @@ namespace LF
 			return 0;
 		}
 
-		if (object == nullptr) {
+		if (stream == nullptr) {
 			return 0;
 		}
 
-		return wrap_call<i32>(self->Read, object, buffer, count);
+		return wrap_call<i32>(self->Read, stream, buffer, count);
 	}
 
 	i32 MemStream::Write(const char* buffer, i32 count)
@@ -94,11 +94,11 @@ namespace LF
 			return 0;
 		}
 
-		if (object == nullptr) {
+		if (stream == nullptr) {
 			return 0;
 		}
 
-		return wrap_call<i32>(self->Write, object, buffer, count);
+		return wrap_call<i32>(self->Write, stream, buffer, count);
 	}
 
 	i32 MemStream::Seek(i32 offset, u16 seekOrigin)
@@ -107,11 +107,11 @@ namespace LF
 			return 0;
 		}
 
-		if (object == nullptr) {
+		if (stream == nullptr) {
 			return 0;
 		}
 
-		return wrap_call<i32>(self->Seek, object, offset, seekOrigin);
+		return wrap_call<i32>(self->Seek, stream, offset, seekOrigin);
 	}
 
 	void* MemStream::Memory()
@@ -120,11 +120,11 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
+		if (stream == nullptr) {
 			return nullptr;
 		}
 
-		return wrap_call<void*>(self->Memory, object);
+		return wrap_call<void*>(self->Memory, stream);
 	}
 
 	i64 MemStream::GetPosition()
@@ -133,11 +133,11 @@ namespace LF
 			return 0;
 		}
 
-		if (object == nullptr) {
+		if (stream == nullptr) {
 			return 0;
 		}
 
-		return wrap_call<i64>(self->GetPosition, object);
+		return wrap_call<i64>(self->GetPosition, stream);
 	}
 
 	void MemStream::SetPosition(i64 position)
@@ -146,11 +146,11 @@ namespace LF
 			return;
 		}
 
-		if (object == nullptr) {
+		if (stream == nullptr) {
 			return;
 		}
 
-		wrap_call(self->SetPosition, object, position);
+		wrap_call(self->SetPosition, stream, position);
 	}
 
 	void MemStream::LoadFromFile(const char* fileName)
@@ -159,11 +159,11 @@ namespace LF
 			return;
 		}
 
-		if (object == nullptr) {
+		if (stream == nullptr) {
 			return;
 		}
 
-		wrap_call(self->LoadFromFile, object, fileName);
+		wrap_call(self->LoadFromFile, stream, fileName);
 	}
 
 	void MemStream::SaveToFile(const char* fileName)
@@ -172,10 +172,10 @@ namespace LF
 			return;
 		}
 
-		if (object == nullptr) {
+		if (stream == nullptr) {
 			return;
 		}
 
-		wrap_call(self->SaveToFile, object, fileName);
+		wrap_call(self->SaveToFile, stream, fileName);
 	}
 }

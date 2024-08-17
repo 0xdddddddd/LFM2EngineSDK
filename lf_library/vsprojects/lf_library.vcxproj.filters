@@ -29,7 +29,7 @@
     <ClCompile Include="..\..\src\lf_magic_ac_list.cc">
       <Filter>src\object</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\lf_map_envir.cc">
+    <ClCompile Include="..\..\src\lf_envir_map.cc">
       <Filter>src\object</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\lf_mem_stream.cc">
@@ -47,7 +47,7 @@
     <ClCompile Include="..\..\src\lf_smart_object.cc">
       <Filter>src\object</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\lf_stringlist.cc">
+    <ClCompile Include="..\..\src\lf_string_list.cc">
       <Filter>src\object</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\lf_user_engine.cc">
@@ -68,12 +68,12 @@
     <ClCompile Include="..\..\src\lf_inifile.cc">
       <Filter>src\object</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\lf_hook.cc">
+    <ClCompile Include="..\..\src\lf_hook_example.cc">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\lf_hook.h">
+    <ClInclude Include="..\..\include\lf_hook_example.h">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\lf_arch.h">
@@ -118,7 +118,7 @@
     <ClInclude Include="..\..\include\lf_magic_ac_list.h">
       <Filter>include\object</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\lf_map_envir.h">
+    <ClInclude Include="..\..\include\lf_envir_map.h">
       <Filter>include\object</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\lf_mem_stream.h">
@@ -139,7 +139,7 @@
     <ClInclude Include="..\..\include\lf_smart_object.h">
       <Filter>include\object</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\lf_stringlist.h">
+    <ClInclude Include="..\..\include\lf_string_list.h">
       <Filter>include\object</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\lf_user_engine.h">

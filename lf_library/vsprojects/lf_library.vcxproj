@@ -23,18 +23,18 @@
     <ClCompile Include="..\..\src\lf_dummy_object.cc" />
     <ClCompile Include="..\..\src\lf_guild.cc" />
     <ClCompile Include="..\..\src\lf_hero_object.cc" />
-    <ClCompile Include="..\..\src\lf_hook.cc" />
+    <ClCompile Include="..\..\src\lf_hook_example.cc" />
     <ClCompile Include="..\..\src\lf_inifile.cc" />
     <ClCompile Include="..\..\src\lf_list.cc" />
     <ClCompile Include="..\..\src\lf_m2engine.cc" />
     <ClCompile Include="..\..\src\lf_magic_ac_list.cc" />
-    <ClCompile Include="..\..\src\lf_map_envir.cc" />
+    <ClCompile Include="..\..\src\lf_envir_map.cc" />
     <ClCompile Include="..\..\src\lf_mem_stream.cc" />
     <ClCompile Include="..\..\src\lf_menu.cc" />
     <ClCompile Include="..\..\src\lf_norm_npc.cc" />
     <ClCompile Include="..\..\src\lf_play_object.cc" />
     <ClCompile Include="..\..\src\lf_smart_object.cc" />
-    <ClCompile Include="..\..\src\lf_stringlist.cc" />
+    <ClCompile Include="..\..\src\lf_string_list.cc" />
     <ClCompile Include="..\..\src\lf_user_engine.cc" />
   </ItemGroup>
   <ItemGroup>
@@ -44,12 +44,12 @@
     <ClInclude Include="..\..\include\lf_dummy_object.h" />
     <ClInclude Include="..\..\include\lf_guild.h" />
     <ClInclude Include="..\..\include\lf_hero_object.h" />
-    <ClInclude Include="..\..\include\lf_hook.h" />
+    <ClInclude Include="..\..\include\lf_hook_example.h" />
     <ClInclude Include="..\..\include\lf_inifile.h" />
     <ClInclude Include="..\..\include\lf_list.h" />
     <ClInclude Include="..\..\include\lf_m2engine.h" />
     <ClInclude Include="..\..\include\lf_magic_ac_list.h" />
-    <ClInclude Include="..\..\include\lf_map_envir.h" />
+    <ClInclude Include="..\..\include\lf_envir_map.h" />
     <ClInclude Include="..\..\include\lf_mem_stream.h" />
     <ClInclude Include="..\..\include\lf_menu.h" />
     <ClInclude Include="..\..\include\lf_norm_npc.h" />
@@ -57,7 +57,7 @@
     <ClInclude Include="..\..\include\lf_play_object.h" />
     <ClInclude Include="..\..\include\lf_smart_object.h" />
     <ClInclude Include="..\..\include\lf_stdint.h" />
-    <ClInclude Include="..\..\include\lf_stringlist.h" />
+    <ClInclude Include="..\..\include\lf_string_list.h" />
     <ClInclude Include="..\..\include\lf_struct.h" />
     <ClInclude Include="..\..\include\lf_typedef.h" />
     <ClInclude Include="..\..\include\lf_user_engine.h" />

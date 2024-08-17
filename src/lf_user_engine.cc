@@ -2,9 +2,8 @@
 
 namespace LF
 {
-	UserEngine::UserEngine(struct TUserEngineFunc* self, struct TUserEngine* object)
+	UserEngine::UserEngine(struct TUserEngineFunc* self)
 		: self(self)
-		, object(object)
 	{
 	}
 
@@ -18,11 +17,7 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TStringList*>(self->GetPlayerList, object);
+		return wrap_call<struct TStringList*>(self->GetPlayerList);
 	}
 
 	struct TPlayObject* UserEngine::GetPlayerByName(const char* chrName)
@@ -31,11 +26,7 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TPlayObject*>(self->GetPlayerByName, object, chrName);
+		return wrap_call<struct TPlayObject*>(self->GetPlayerByName, chrName);
 	}
 
 	struct TPlayObject* UserEngine::GetPlayerByUserID(const char* userID)
@@ -44,24 +35,20 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TPlayObject*>(self->GetPlayerByUserID, object, userID);
+		return wrap_call<struct TPlayObject*>(self->GetPlayerByUserID, userID);
 	}
 
 	struct TPlayObject* UserEngine::GetPlayerByObject(struct TObject* aObject)
 	{
-		if (self == nullptr || self->GetPlayerByObject == nullptr || aObject == nullptr) {
+		if (self == nullptr || self->GetPlayerByObject == nullptr) {
 			return nullptr;
 		}
 
-		if (object == nullptr) {
+		if (aObject == nullptr) {
 			return nullptr;
 		}
 
-		return wrap_call<struct TPlayObject*>(self->GetPlayerByObject, object, aObject);
+		return wrap_call<struct TPlayObject*>(self->GetPlayerByObject, aObject);
 	}
 
 	struct TPlayObject* UserEngine::GetOfflinePlayer(const char* userID)
@@ -70,11 +57,7 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TPlayObject*>(self->GetOfflinePlayer, object, userID);
+		return wrap_call<struct TPlayObject*>(self->GetOfflinePlayer, userID);
 	}
 
 	void UserEngine::KickPlayer(const char* chrName)
@@ -83,11 +66,7 @@ namespace LF
 			return;
 		}
 
-		if (object == nullptr) {
-			return;
-		}
-
-		wrap_call(self->KickPlayer, object, chrName);
+		wrap_call(self->KickPlayer, chrName);
 	}
 
 	struct TStringList* UserEngine::GetHeroList()
@@ -96,11 +75,7 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TStringList*>(self->GetHeroList, object);
+		return wrap_call<struct TStringList*>(self->GetHeroList);
 	}
 
 	struct THeroObject* UserEngine::GetHeroByName(const char* chrName)
@@ -109,11 +84,7 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct THeroObject*>(self->GetHeroByName, object, chrName);
+		return wrap_call<struct THeroObject*>(self->GetHeroByName, chrName);
 	}
 
 	bool UserEngine::KickHero(const char* chrName)
@@ -122,11 +93,7 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->KickHero, object, chrName);
+		return wrap_call<bool>(self->KickHero, chrName);
 	}
 
 	struct TList* UserEngine::GetMerchantList()
@@ -135,11 +102,7 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TList*>(self->GetMerchantList, object);
+		return wrap_call<struct TList*>(self->GetMerchantList);
 	}
 
 	struct TList* UserEngine::GetCustomNpcConfigList()
@@ -148,11 +111,7 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TList*>(self->GetCustomNpcConfigList, object);
+		return wrap_call<struct TList*>(self->GetCustomNpcConfigList);
 	}
 
 	struct TList* UserEngine::GetQuestNPCList()
@@ -161,11 +120,7 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TList*>(self->GetQuestNPCList, object);
+		return wrap_call<struct TList*>(self->GetQuestNPCList);
 	}
 
 	struct TNormNpc* UserEngine::GetManageNPC()
@@ -174,11 +129,7 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TNormNpc*>(self->GetManageNPC, object);
+		return wrap_call<struct TNormNpc*>(self->GetManageNPC);
 	}
 
 	struct TNormNpc* UserEngine::GetFunctionNPC()
@@ -187,11 +138,7 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TNormNpc*>(self->GetFunctionNPC, object);
+		return wrap_call<struct TNormNpc*>(self->GetFunctionNPC);
 	}
 
 	struct TNormNpc* UserEngine::GetRobotNPC()
@@ -200,11 +147,7 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TNormNpc*>(self->GetRobotNPC, object);
+		return wrap_call<struct TNormNpc*>(self->GetRobotNPC);
 	}
 
 	struct TNormNpc* UserEngine::MissionNPC()
@@ -213,24 +156,20 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TNormNpc*>(self->MissionNPC, object);
+		return wrap_call<struct TNormNpc*>(self->MissionNPC);
 	}
 
 	struct TNormNpc* UserEngine::FindMerchant(struct TObject* aObject)
 	{
-		if (self == nullptr || self->FindMerchant == nullptr || aObject == nullptr) {
+		if (self == nullptr || self->FindMerchant == nullptr) {
 			return nullptr;
 		}
 
-		if (object == nullptr) {
+		if (aObject == nullptr) {
 			return nullptr;
 		}
 
-		return wrap_call<struct TNormNpc*>(self->FindMerchant, object, aObject);
+		return wrap_call<struct TNormNpc*>(self->FindMerchant, aObject);
 	}
 
 	struct TNormNpc* UserEngine::FindMerchantByPos(const char* mapName, i32 nX, i32 nY)
@@ -239,24 +178,20 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TNormNpc*>(self->FindMerchantByPos, object, mapName, nX, nY);
+		return wrap_call<struct TNormNpc*>(self->FindMerchantByPos, mapName, nX, nY);
 	}
 
 	struct TNormNpc* UserEngine::FindQuestNPC(struct TObject* aObject)
 	{
-		if (self == nullptr || self->FindQuestNPC == nullptr || aObject == nullptr) {
+		if (self == nullptr || self->FindQuestNPC == nullptr) {
 			return nullptr;
 		}
 
-		if (object == nullptr) {
+		if (aObject == nullptr) {
 			return nullptr;
 		}
 
-		return wrap_call<struct TNormNpc*>(self->FindQuestNPC, object, aObject);
+		return wrap_call<struct TNormNpc*>(self->FindQuestNPC, aObject);
 	}
 
 	struct TList* UserEngine::GetMagicList()
@@ -265,11 +200,7 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TList*>(self->GetMagicList, object);
+		return wrap_call<struct TList*>(self->GetMagicList);
 	}
 
 	struct TList* UserEngine::GetCustomMagicConfigList()
@@ -278,11 +209,7 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TList*>(self->GetCustomMagicConfigList, object);
+		return wrap_call<struct TList*>(self->GetCustomMagicConfigList);
 	}
 
 	struct TMagicACList* UserEngine::GetMagicACList()
@@ -291,11 +218,7 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TMagicACList*>(self->GetMagicACList, object);
+		return wrap_call<struct TMagicACList*>(self->GetMagicACList);
 	}
 
 	bool UserEngine::FindMagicByName(const char* magName, struct TMagic* magic)
@@ -304,11 +227,7 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->FindMagicByName, object, magName, magic);
+		return wrap_call<bool>(self->FindMagicByName, magName, magic);
 	}
 
 	bool UserEngine::FindMagicByIndex(i32 magIdx, struct TMagic* magic)
@@ -317,11 +236,7 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->FindMagicByIndex, object, magIdx, magic);
+		return wrap_call<bool>(self->FindMagicByIndex, magIdx, magic);
 	}
 
 	bool UserEngine::FindMagicByNameEx(const char* magName, i32 magAttr, struct TMagic* magic)
@@ -330,11 +245,7 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->FindMagicByNameEx, object, magName, magAttr, magic);
+		return wrap_call<bool>(self->FindMagicByNameEx, magName, magAttr, magic);
 	}
 
 	bool UserEngine::FindMagicByIndexEx(i32 magIdx, i32 magAttr, struct TMagic* magic)
@@ -343,11 +254,7 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->FindMagicByIndexEx, object, magIdx, magAttr, magic);
+		return wrap_call<bool>(self->FindMagicByIndexEx, magIdx, magAttr, magic);
 	}
 
 	bool UserEngine::FindHeroMagicByName(const char* magName, struct TMagic* magic)
@@ -356,11 +263,7 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->FindHeroMagicByName, object, magName, magic);
+		return wrap_call<bool>(self->FindHeroMagicByName, magName, magic);
 	}
 
 	bool UserEngine::FindHeroMagicByIndex(i32 magIdx, struct TMagic* magic)
@@ -369,11 +272,7 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->FindHeroMagicByIndex, object, magIdx, magic);
+		return wrap_call<bool>(self->FindHeroMagicByIndex, magIdx, magic);
 	}
 
 	bool UserEngine::FindHeroMagicByNameEx(const char* magName, i32 magAttr, struct TMagic* magic)
@@ -382,11 +281,7 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->FindHeroMagicByNameEx, object, magName, magAttr, magic);
+		return wrap_call<bool>(self->FindHeroMagicByNameEx, magName, magAttr, magic);
 	}
 
 	bool UserEngine::FindHeroMagicByIndexEx(i32 magIdx, i32 magAttr, struct TMagic* magic)
@@ -395,11 +290,7 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->FindHeroMagicByIndexEx, object, magIdx, magAttr, magic);
+		return wrap_call<bool>(self->FindHeroMagicByIndexEx, magIdx, magAttr, magic);
 	}
 
 	struct TList* UserEngine::GetStdItemList()
@@ -408,11 +299,7 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TList*>(self->GetStdItemList, object);
+		return wrap_call<struct TList*>(self->GetStdItemList);
 	}
 
 	bool UserEngine::GetStdItemByName(const char* itemName, struct TStdItem* stdItem)
@@ -421,11 +308,7 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->GetStdItemByName, object, itemName, stdItem);
+		return wrap_call<bool>(self->GetStdItemByName, itemName, stdItem);
 	}
 
 	bool UserEngine::GetStdItemByIndex(i32 itemIdx, struct TStdItem* stdItem)
@@ -434,11 +317,7 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->GetStdItemByIndex, object, itemIdx, stdItem);
+		return wrap_call<bool>(self->GetStdItemByIndex, itemIdx, stdItem);
 	}
 
 	bool UserEngine::GetStdItemName(i32 itemIdx, char* dest, u32* destLen)
@@ -447,11 +326,7 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->GetStdItemName, object, itemIdx, dest, destLen);
+		return wrap_call<bool>(self->GetStdItemName, itemIdx, dest, destLen);
 	}
 
 	i32 UserEngine::GetStdItemIndex(const char* itemName)
@@ -460,11 +335,7 @@ namespace LF
 			return -1;
 		}
 
-		if (object == nullptr) {
-			return -1;
-		}
-
-		return wrap_call<i32>(self->GetStdItemIndex, object, itemName);
+		return wrap_call<i32>(self->GetStdItemIndex, itemName);
 	}
 
 	struct TList* UserEngine::MonsterList()
@@ -473,11 +344,7 @@ namespace LF
 			return nullptr;
 		}
 
-		if (object == nullptr) {
-			return nullptr;
-		}
-
-		return wrap_call<struct TList*>(self->MonsterList, object);
+		return wrap_call<struct TList*>(self->MonsterList);
 	}
 
 	bool UserEngine::SendBroadCastMsg(const char* sMsg, i32 fColor, i32 bColor, i32 msgType)
@@ -486,11 +353,7 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->SendBroadCastMsg, object, sMsg, fColor, bColor, msgType);
+		return wrap_call<bool>(self->SendBroadCastMsg, sMsg, fColor, bColor, msgType);
 	}
 
 	bool UserEngine::SendBroadCastMsgExt(const char* sMsg, i32 msgType)
@@ -499,11 +362,7 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->SendBroadCastMsgExt, object, sMsg, msgType);
+		return wrap_call<bool>(self->SendBroadCastMsgExt, sMsg, msgType);
 	}
 
 	bool UserEngine::SendTopBroadCastMsg(const char* sMsg, i32 fColor, i32 bColor, i32 nTime, i32 msgType)
@@ -512,63 +371,43 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->SendTopBroadCastMsg, object, sMsg, fColor, bColor, nTime, msgType);
+		return wrap_call<bool>(self->SendTopBroadCastMsg, sMsg, fColor, bColor, nTime, msgType);
 	}
 
-	void UserEngine::SendMoveMsg(const char* sMsg, void* btFColor, void* btBColor, i32 nY, i32 nMoveCount, i32 nFontSize, i32 nMarqueeTime)
+	void UserEngine::SendMoveMsg(const char* sMsg, u8 btFColor, u8 btBColor, i32 nY, i32 nMoveCount, i32 nFontSize, i32 nMarqueeTime)
 	{
 		if (self == nullptr || self->SendMoveMsg == nullptr || sMsg == nullptr) {
 			return;
 		}
 
-		if (object == nullptr) {
-			return;
-		}
-
-		wrap_call(self->SendMoveMsg, object, sMsg, btFColor, btBColor, nY, nMoveCount, nFontSize, nMarqueeTime);
+		wrap_call(self->SendMoveMsg, sMsg, btFColor, btBColor, nY, nMoveCount, nFontSize, nMarqueeTime);
 	}
 
-	void UserEngine::SendCenterMsg(const char* sMsg, void* btFColor, void* btBColor, i32 nTime)
+	void UserEngine::SendCenterMsg(const char* sMsg, u8 btFColor, u8 btBColor, i32 nTime)
 	{
 		if (self == nullptr || self->SendCenterMsg == nullptr || sMsg == nullptr) {
 			return;
 		}
 
-		if (object == nullptr) {
-			return;
-		}
-
-		wrap_call(self->SendCenterMsg, object, sMsg, btFColor, btBColor, nTime);
+		wrap_call(self->SendCenterMsg, sMsg, btFColor, btBColor, nTime);
 	}
 
-	void UserEngine::SendNewLineMsg(const char* sMsg, void* btFColor, void* btBColor, void* btFontSize, i32 nY, i32 nShowMsgTime, i32 nDrawType)
+	void UserEngine::SendNewLineMsg(const char* sMsg, u8 btFColor, u8 btBColor, u8 btFontSize, i32 nY, i32 nShowMsgTime, i32 nDrawType)
 	{
 		if (self == nullptr || self->SendNewLineMsg == nullptr || sMsg == nullptr) {
 			return;
 		}
 
-		if (object == nullptr) {
-			return;
-		}
-
-		wrap_call(self->SendNewLineMsg, object, sMsg, btFColor, btBColor, btFontSize, nY, nShowMsgTime, nDrawType);
+		wrap_call(self->SendNewLineMsg, sMsg, btFColor, btBColor, btFontSize, nY, nShowMsgTime, nDrawType);
 	}
 
-	void UserEngine::SendSuperMoveMsg(const char* sMsg, void* btFColor, void* btBColor, void* btFontSize, i32 nY, i32 nMoveCount)
+	void UserEngine::SendSuperMoveMsg(const char* sMsg, u8 btFColor, u8 btBColor, u8 btFontSize, i32 nY, i32 nMoveCount)
 	{
 		if (self == nullptr || self->SendSuperMoveMsg == nullptr || sMsg == nullptr) {
 			return;
 		}
 
-		if (object == nullptr) {
-			return;
-		}
-
-		wrap_call(self->SendSuperMoveMsg, object, sMsg, btFColor, btBColor, btFontSize, nY, nMoveCount);
+		wrap_call(self->SendSuperMoveMsg, sMsg, btFColor, btBColor, btFontSize, nY, nMoveCount);
 	}
 
 	void UserEngine::SendSceneShake(i32 count)
@@ -577,11 +416,7 @@ namespace LF
 			return;
 		}
 
-		if (object == nullptr) {
-			return;
-		}
-
-		wrap_call(self->SendSceneShake, object, count);
+		wrap_call(self->SendSceneShake, count);
 	}
 
 	bool UserEngine::CopyToUserItemFromName(const char* itemName, struct TUserItem* userItem)
@@ -590,11 +425,7 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->CopyToUserItemFromName, object, itemName, userItem);
+		return wrap_call<bool>(self->CopyToUserItemFromName, itemName, userItem);
 	}
 
 	bool UserEngine::CopyToUserItemFromItem(struct TStdItem* stdItem, i32 itemIndex, struct TUserItem* userItem)
@@ -603,11 +434,7 @@ namespace LF
 			return false;
 		}
 
-		if (object == nullptr) {
-			return false;
-		}
-
-		return wrap_call<bool>(self->CopyToUserItemFromItem, object, stdItem, itemIndex, userItem);
+		return wrap_call<bool>(self->CopyToUserItemFromItem, stdItem, itemIndex, userItem);
 	}
 
 	void UserEngine::RandomUpgradeItem(struct TUserItem* userItem)
@@ -616,11 +443,7 @@ namespace LF
 			return;
 		}
 
-		if (object == nullptr) {
-			return;
-		}
-
-		wrap_call(self->RandomUpgradeItem, object, userItem);
+		wrap_call(self->RandomUpgradeItem, userItem);
 	}
 
 	void UserEngine::RandomItemNewAbil(struct TUserItem* userItem)
@@ -629,11 +452,7 @@ namespace LF
 			return;
 		}
 
-		if (object == nullptr) {
-			return;
-		}
-
-		wrap_call(self->RandomItemNewAbil, object, userItem);
+		wrap_call(self->RandomItemNewAbil, userItem);
 	}
 
 	void UserEngine::GetUnknowItemValue(struct TUserItem* userItem)
@@ -642,11 +461,7 @@ namespace LF
 			return;
 		}
 
-		if (object == nullptr) {
-			return;
-		}
-
-		wrap_call(self->GetUnknowItemValue, object, userItem);
+		wrap_call(self->GetUnknowItemValue, userItem);
 	}
 
 	i32 UserEngine::GetAllDummyCount()
@@ -655,24 +470,20 @@ namespace LF
 			return 0;
 		}
 
-		if (object == nullptr) {
-			return 0;
-		}
-
-		return wrap_call<i32>(self->GetAllDummyCount, object);
+		return wrap_call<i32>(self->GetAllDummyCount);
 	}
 
 	i32 UserEngine::GetMapDummyCount(struct TEnvirnoment* envir)
 	{
-		if (self == nullptr || self->GetMapDummyCount == nullptr || envir == nullptr) {
+		if (self == nullptr || self->GetMapDummyCount == nullptr) {
 			return 0;
 		}
 
-		if (object == nullptr) {
+		if (envir == nullptr) {
 			return 0;
 		}
 
-		return wrap_call<i32>(self->GetMapDummyCount, object, envir);
+		return wrap_call<i32>(self->GetMapDummyCount, envir);
 	}
 
 	i32 UserEngine::GetOfflineCount()
@@ -681,11 +492,7 @@ namespace LF
 			return 0;
 		}
 
-		if (object == nullptr) {
-			return 0;
-		}
-
-		return wrap_call<i32>(self->GetOfflineCount, object);
+		return wrap_call<i32>(self->GetOfflineCount);
 	}
 
 	i32 UserEngine::GetRealPlayerCount()
@@ -694,10 +501,6 @@ namespace LF
 			return 0;
 		}
 
-		if (object == nullptr) {
-			return 0;
-		}
-
-		return wrap_call<i32>(self->GetRealPlayerCount, object);
+		return wrap_call<i32>(self->GetRealPlayerCount);
 	}
 }

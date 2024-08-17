@@ -6,10 +6,11 @@
 
 namespace LF
 {
+	// TUserEngine ∂‘œÛ 
 	class UserEngine
 	{
 	public:
-		explicit UserEngine(struct TUserEngineFunc* self, struct TUserEngine* object);
+		explicit UserEngine(struct TUserEngineFunc* self);
 		virtual ~UserEngine();
 	public:
 		struct TStringList* GetPlayerList();
@@ -51,10 +52,10 @@ namespace LF
 		bool SendBroadCastMsg(const char* sMsg, i32 fColor, i32 bColor, i32 msgType);
 		bool SendBroadCastMsgExt(const char* sMsg, i32 msgType);
 		bool SendTopBroadCastMsg(const char* sMsg, i32 fColor, i32 bColor, i32 nTime, i32 msgType);
-		void SendMoveMsg(const char* sMsg, void* btFColor, void* btBColor, i32 nY, i32 nMoveCount, i32 nFontSize, i32 nMarqueeTime);
-		void SendCenterMsg(const char* sMsg, void* btFColor, void* btBColor, i32 nTime);
-		void SendNewLineMsg(const char* sMsg, void* btFColor, void* btBColor, void* btFontSize, i32 nY, i32 nShowMsgTime, i32 nDrawType);
-		void SendSuperMoveMsg(const char* sMsg, void* btFColor, void* btBColor, void* btFontSize, i32 nY, i32 nMoveCount);
+		void SendMoveMsg(const char* sMsg, u8 btFColor, u8 btBColor, i32 nY, i32 nMoveCount, i32 nFontSize, i32 nMarqueeTime);
+		void SendCenterMsg(const char* sMsg, u8 btFColor, u8 btBColor, i32 nTime);
+		void SendNewLineMsg(const char* sMsg, u8 btFColor, u8 btBColor, u8 btFontSize, i32 nY, i32 nShowMsgTime, i32 nDrawType);
+		void SendSuperMoveMsg(const char* sMsg, u8 btFColor, u8 btBColor, u8 btFontSize, i32 nY, i32 nMoveCount);
 		void SendSceneShake(i32 count);
 		bool CopyToUserItemFromName(const char* itemName, struct TUserItem* userItem);
 		bool CopyToUserItemFromItem(struct TStdItem* stdItem, i32 itemIndex, struct TUserItem* userItem);
@@ -65,10 +66,8 @@ namespace LF
 		i32 GetMapDummyCount(struct TEnvirnoment* envir);
 		i32 GetOfflineCount();
 		i32 GetRealPlayerCount();
-
 	private:
 		struct TUserEngineFunc* self;
-		struct TUserEngine* object;
 	};
 
 }

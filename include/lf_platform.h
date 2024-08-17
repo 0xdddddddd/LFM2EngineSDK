@@ -10,6 +10,7 @@
 
 #if defined(H_OS_WINDOWS)
 #   if defined(__cplusplus)
+#       include <memory>
 #	    ifndef NOMINMAX
 #		    define NOMINMAX
 #	    endif
@@ -34,6 +35,18 @@
 
 #ifndef MAX
 #	define MAX(x, y) (((x) > (y)) ? (x) : (y))
+#endif
+
+#ifndef MAKEBYTE
+#	define MAKEBYTE(a, b) ((u8)(((u8)(((u8)(a)) & 0x0F)) | ((u8)((u8)(b) & 0x0F) << 4)))
+#endif
+
+#ifndef LOBYTE_NIBBLE
+#	define LOBYTE_NIBBLE(byte) ((byte) & 0x0F)
+#endif
+
+#ifndef HIBYTE_NIBBLE
+#	define HIBYTE_NIBBLE(byte) (((byte) >> 4) & 0x0F)
 #endif
 
 #if defined(H_OS_WINDOWS)

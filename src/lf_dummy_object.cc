@@ -50,5 +50,4 @@ namespace LF
 
 		wrap_call(self->Stop, object);
 	}
-
 }
